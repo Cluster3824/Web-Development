@@ -1,0 +1,303 @@
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Use global fonts from index.css */
+body, .home-wrapper { font-family: 'Inter', sans-serif; }
+
+body, html, #root {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* WRAPPER */
+.home-wrapper { width: 100%; background: var(--color-offwhite); color: var(--text-primary); overflow-x: hidden; }
+
+/* ===== HERO SECTION ===== */
+.home-hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  text-align: center;
+  /* Updated to higher-resolution Unsplash image; replace with /public/assets/hero-home.webp for best performance and deterministic results */
+  background-image: url('https://www.istockphoto.com/photo/books-gm949118068-259102273?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2FBOOK&utm_term=BOOK%3A%3Alayout-below-fold-units-2%3Aexperiment');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.home-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(6,12,20,0.55), rgba(6,12,20,0.3));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #fff;
+  animation: fadeDown 1s ease forwards;
+  text-shadow: 0 6px 18px rgba(2,6,10,0.45);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn-primary, .btn-secondary { padding: 12px 25px; border-radius: var(--radius-pill); font-size: 16px; cursor: pointer; border: none; transition: all 0.3s; }
+.btn-primary { background: var(--color-amber); color: var(--color-deep-navy); }
+.btn-primary:hover { transform: translateY(-6px); }
+.btn-secondary { background: transparent; color: var(--color-amber); border: 2px solid var(--color-amber); }
+.btn-secondary:hover { transform: translateY(-6px); color: white; background: var(--color-amber); }
+
+/* ===== ABOUT ===== */
+.home-about {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.home-about h2 { font-size: 36px; margin-bottom: 20px; color: var(--color-deep-navy); font-family: 'Playfair Display', serif; }
+
+.home-about p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* ===== FEATURES ===== */
+.home-features {
+  background: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.home-features h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===== REVIEWS ===== */
+.home-reviews {
+  background: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.home-reviews h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.review-card {
+  background: #fff7f0;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+}
+
+.review-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.review-card h3 {
+  color: #333;
+}
+
+.author {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.rating {
+  color: #f77f00;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  color: #555;
+  font-size: 15px;
+}
+
+/* ===== SUGGESTIONS ===== */
+.home-suggestions {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.home-suggestions h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.book-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+}
+
+.book-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: opacity 0.5s ease-in-out;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  opacity: 0;
+}
+
+.book-card img.loaded {
+  opacity: 1;
+}
+
+.book-card img.error {
+  opacity: 1;
+  background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 14px;
+}
+
+.book-card h3 {
+  color: #333;
+}
+
+.book-card p {
+  color: #777;
+}
+
+.book-card span {
+  color: #f77f00;
+  font-weight: bold;
+}
+
+/* ===== ACTIONS ===== */
+.home-actions {
+  padding: 80px 20px;
+  background: #fef9f4;
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ===== FOOTER ===== */
+.home-footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 32px; }
+  .hero-content p { font-size: 16px; }
+  .home-about h2, .home-reviews h2, .home-suggestions h2 { font-size: 28px; }
+  .review-card img, .book-card img { height: 200px; }
+  .features-grid, .book-grid { grid-template-columns: 1fr; }
+  .feature-card { padding: 20px 15px; }
+  .feature-icon { font-size: 40px; }
+}

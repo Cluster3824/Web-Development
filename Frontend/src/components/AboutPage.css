@@ -1,0 +1,232 @@
+.about-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 80px 20px 40px;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #0D1B2A 0%, #1E6091 100%);
+  color: white;
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.about-hero h1 {
+  font-size: 52px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero p {
+  font-size: 22px;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  padding: 60px 40px;
+}
+
+.about-section {
+  margin-bottom: 50px;
+}
+
+.about-section h2 {
+  font-size: 36px;
+  color: #0D1B2A;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.about-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #E0A458 0%, #1E6091 100%);
+  border-radius: 2px;
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.feature-item {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.feature-item h3 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.feature-item p {
+  color: #666;
+  font-size: 16px;
+}
+
+.stats-section {
+  background: linear-gradient(135deg, #1E6091 0%, #0D1B2A 100%);
+  color: white;
+  padding: 60px 40px;
+  margin: 0 -40px;
+  position: relative;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+  pointer-events: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.contact-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 50px 40px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid rgba(224,164,88,0.1);
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-item span {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-wrapper {
+    padding: 60px 15px 20px;
+  }
+  
+  .about-hero {
+    padding: 50px 25px;
+  }
+  
+  .about-hero h1 {
+    font-size: 40px;
+  }
+  
+  .about-hero p {
+    font-size: 18px;
+  }
+  
+  .about-content {
+    padding: 40px 25px;
+  }
+  
+  .about-section h2 {
+    font-size: 28px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .stats-section {
+    margin: 0 -25px;
+    padding: 40px 25px;
+  }
+}

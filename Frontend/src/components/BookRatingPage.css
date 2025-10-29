@@ -1,0 +1,357 @@
+/* =========================================================
+   🌟 BOOK RATING PAGE STYLES
+   Theme: White & Gold (#ffb400)
+   Author: Cluster
+   ========================================================= */
+
+/* ------------------------------
+   🧱 Base Layout
+------------------------------ */
+.page-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  background: var(--color-offwhite);
+  overflow: hidden;
+  position: relative; /* contain absolutely positioned blobs */
+}
+
+/* ------------------------------
+   📚 Sidebar
+------------------------------ */
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  padding: 24px;
+  border-right: 2px solid rgba(13,27,42,0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar h3,
+.sidebar h4 {
+  color: var(--color-amber);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ----- Genre List ----- */
+.genre-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+.genre-list li {
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.genre-list li:hover {
+  background: rgba(255, 180, 0, 0.1);
+}
+
+.genre-list li.active {
+  background: #ffb400;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ----- Top Rated ----- */
+.top-rated {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.top-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-item img {
+  width: 34px;
+  height: 44px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top-item p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #333;
+}
+
+.top-item span {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ------------------------------
+   🏷️ Main Content Area
+------------------------------ */
+.main-content {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+}
+
+.main-content h2 {
+  color: var(--color-deep-navy);
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ----- Book Grid ----- */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+.book-card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  text-align: center;
+  padding: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-amber);
+  box-shadow: 0 6px 12px rgba(224,164,88,0.12);
+}
+
+.book-card.selected {
+  border: 2px solid #ffb400;
+}
+
+.book-card img {
+  width: 100%;
+  height: 220px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.book-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 6px 0 3px 0;
+  color: #222;
+}
+
+.book-card p {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0 0 5px 0;
+}
+
+.book-card span {
+  color: #ffb400;
+  font-weight: 500;
+}
+
+/* ------------------------------
+   📖 Right Book Detail Panel
+------------------------------ */
+.book-detail {
+  width: 340px;
+  background: #fdfdfd;
+  border-left: 2px solid #f0f0f0;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Ensure main panes sit above decorative blobs */
+.sidebar, .main-content, .book-detail { position: relative; z-index: 2; }
+
+/* ----- Sticky Back Button ----- */
+.back-button {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  border: none;
+  color: #555;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.back-button:hover {
+  background: rgba(255, 180, 0, 0.15);
+  color: #ffb400;
+}
+
+.back-button:active {
+  transform: scale(0.97);
+}
+
+/* ----- Book Header Info ----- */
+.detail-header {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.detail-header img {
+  width: 110px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.detail-header h2 {
+  font-size: 1.2rem;
+  color: #222;
+  margin: 0 0 4px 0;
+}
+
+.detail-header p {
+  color: #777;
+  margin: 0 0 8px 0;
+}
+
+.genre-tag {
+  display: inline-block;
+  background: #ffb400;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.avg-detail {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ----- Reviews Section ----- */
+.reviews-section h3 {
+  color: #ffb400;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.review-item {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(12, 12, 12, 0.04);
+}
+
+.review-item span {
+  color: #ffb400;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.review-item p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 4px 0 0 0;
+}
+
+/* ------------------------------
+   ✍️ Add Review Section
+------------------------------ */
+.add-review {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.add-review h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-amber);
+  margin-bottom: 8px;
+}
+
+.rating-input {
+  font-size: 1.6rem;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.rating-input .star.active {
+  color: #ffb400;
+}
+
+.add-review textarea {
+  width: 100%;
+  height: 70px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  font-family: inherit;
+  resize: none;
+  margin-bottom: 8px;
+}
+
+.add-review button {
+  background: var(--color-amber);
+  border: none;
+  color: var(--color-deep-navy);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-review button:hover {
+  background: #d8a24a;
+}
+  
+/* === FLOATING BLOBS (SUBTLE BACKGROUND EFFECT) - reused from BookReviewPage === */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12;
+  filter: blur(100px);
+  animation: float 9s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.blob1 { background: #ffb400; top: -120px; left: -100px; width: 320px; height: 320px; }
+.blob2 { background: #ff6f61; bottom: -150px; right: -140px; width: 300px; height: 300px; }
+.blob3 { background: #ffd166; top: 45%; left: 60%; width: 220px; height: 220px; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-30px); }
+}
+
